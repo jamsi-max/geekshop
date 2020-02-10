@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+content = ['aaa', 'bbb']
+
 def main(request):
     return render(request, 'mainapp/index.html')
 
