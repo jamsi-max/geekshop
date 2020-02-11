@@ -1,81 +1,46 @@
-<!DOCTYPE html>
+{% extends 'mainapp/base.html' %}
 {% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Контакты</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
-</head>
-<body>
-	<div class="container">
-		<div class="hero">
-			<div class="header clearfix">
-				<a href="index.html" class="logo"></a>
-				<ul class="menu">
-					<li><a href="{% url 'main' %}">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="{% url 'contact' %}" class="active">контакты</a></li>
-				</ul>
-				<a href="#" class="search"></a>
-                <a href="#" class="basket"></a>
-			</div>
-			<h1>наши контакты</h1>
+
+{% block menu %}
+	<div class="hero">
+		<div class="header clearfix">
+			<a href="index.html" class="logo"></a>
+			{% include 'mainapp/includes/inc_menu.html' %}
+			<a href="#" class="search"></a>
+			<a href="#" class="basket"></a>
 		</div>
+		<h1>наши контакты</h1>
+		<p>{{ visit_date|date:"l, j F, Y" }} </p>
+	</div>
+{% endblock menu %}
+
+{% block content %}
 
 		<div class="location">
+		{% for location in locations %}
 			<div class="location-1">
 				<i class="fa fa-map-marker fa-5x"></i>
-				<h4>Москва</h4>
+				<h4>{{ location.city }}</h4>
 				<div class="contacts">
 					<h5>Телефон</h5>
-					<p>+7-888-888-8888</p>
+					<p>{{ location.phone }}</p>
 				</div>
 				<div class="contacts">
 					<h5>Email</h5>
-					<p>info@geekshop.ru</p>
+					<p>{{ location.email }}</p>
 				</div>
 				<div class="contacts">
 					<h5>Адрес</h5>
-					<p>В пределах МКАД</p>
+					<p>{{ location.address }}</p>
 				</div>
 			</div>
-			<div class="location-1">
-				<i class="fa fa-map-marker fa-5x"></i>
-				<h4>Москва</h4>
-				<div class="contacts">
-					<h5>Телефон</h5>
-					<p>+7-888-888-8888</p>
-				</div>
-				<div class="contacts">
-					<h5>Email</h5>
-					<p>info@geekshop.ru</p>
-				</div>
-				<div class="contacts">
-					<h5>Адрес</h5>
-					<p>В пределах МКАД</p>
-				</div>
-			</div>
-			<div class="location-1">
-				<i class="fa fa-map-marker fa-5x"></i>
-				<h4>Москва</h4>
-				<div class="contacts">
-					<h5>Телефон</h5>
-					<p>+7-888-888-8888</p>
-				</div>
-				<div class="contacts">
-					<h5>Email</h5>
-					<p>info@geekshop.ru</p>
-				</div>
-				<div class="contacts">
-					<h5>Адрес</h5>
-					<p>В пределах МКАД</p>
-				</div>
-			</div>
+			{% endfor %}
+
 		</div>
 
 		<div class="clr"></div>
 	</div>	
+{% endblock content %}
 
     <div class="footer">
         <div class="clearfix">
