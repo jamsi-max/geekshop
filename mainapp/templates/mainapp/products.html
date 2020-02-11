@@ -47,7 +47,7 @@
 					<a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
 				</div>
 				<div class="related-products clearfix">
-				{% for same_product in same_products %}
+				{% for same_product in data.same_products %}
 					<div class="block">
 						<a href="#"><img src="{% static 'img/' %}{{ same_product.image_src }}" alt="{{ same_product.alt }}">
 							<div class="text">
