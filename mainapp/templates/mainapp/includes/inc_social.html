@@ -1,0 +1,5 @@
+<div class="social">
+    {% for n in '1234' %}
+        <a href="{% cycle 'https://facebook.com' 'https://twitter.com' 'https://google.com' 'https://vk.com' %}" class="social{{ n }}"></a>
+    {% endfor %}
+</div>

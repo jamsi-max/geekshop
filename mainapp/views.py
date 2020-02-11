@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import datetime
-
+import json
 
 
 def main(request):
@@ -10,14 +10,14 @@ def main(request):
         "name": "Отличный стул",
         "desc": "Расположитесь комфортно.",
         "image_src": "product-1.jpg",
-        "image_href": "/product/1/",
+        "image_href": "/products/1/",
         "alt": "продукт 1",
         },
         {
         "name": "Стул повышенного качества",
         "desc": "Не оторваться.",
         "image_src": "product-2.jpg",
-        "image_href": "/product/2/",
+        "image_href": "/products/2/",
         "alt": "продукт 2",
         },
     ]

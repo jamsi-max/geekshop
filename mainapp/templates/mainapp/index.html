@@ -5,9 +5,7 @@
 {% block menu %}
 	<div class="slider">
 		<div class="header clearfix">
-			<a href="index.html" class="logo"></a>
 			{% include 'mainapp/includes/inc_menu.html' %}
-			<a href="#" class="search"></a>
 		</div>
 		<div class="text-slider">
 			<h3 class="green">тенденции</h3>
@@ -24,7 +22,7 @@
 {% block content %}
 		<div class="featured">
 			<div class="featured-menu">
-					<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
+				<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
 			</div>
 			<a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
 			<div class="clearfix">
@@ -32,7 +30,7 @@
 			<div class="tab-content">
 				{% for product in products %}
 				<div class="block">
-					<a href="{{ product.image_href }}"><img src="{% static 'img/product-1.jpg' %}" alt="{{ product.alt }}"> 
+					<a href="{{ product.image_href }}"><img src="{% static 'img/' %}{{ product.image_src }}" alt="{{ product.alt }}"> 
 						<div class="text">
 							<img src="{% static 'img/icon-hover.png' %}" alt="{{ product.alt }}">
 							<h4>{{ product.name }}</h4>
@@ -41,49 +39,8 @@
 					</a>
 				</div>
 				{% endfor %}
-
-				<div class="block">
-					<a href="#"><img src="{% static 'img/product-2.jpg' %}" alt="">
-						<div class="text">
-							<img src="{% static 'img/icon-hover.png' %}" alt="">
-							<h4>Стул повышенного качества</h4>
-							<p>Не оторваться. </p>
-						</div>
-					</a>
-				</div>	
 			</div>
 		</div>
-{% endblock content %}
-		<div class="clr"></div>
-	</div>
-	
 
-    <div class="footer">
-        <div class="clearfix">
-            <div class="text-footer">
-                <h3>контакты</h3>
-            </div>
-            <div class="text-footer">
-                <h3>полезная информация</h3>
-            </div>
-            <div class="text-footer clearfix">
-                <h3>Оставайтесь на связи</h3>
-                <p>Подписаться на новости и рассылки</p>
-                <form>
-                    <input type="email" name="email" placeholder="ваш email">
-                    <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
-                </form>
-            </div>
-        </div>
-        <p class="small">&copy; GB 2017</p>
-        <div class="social">
-            <a href="#" class="social1"></a>
-            <a href="#" class="social2"></a>
-            <a href="#" class="social3"></a>
-            <a href="#" class="social4"></a>
-        </div>
-        <p class="small">Положения &amp; Условия  /  Конфиденциальность &amp; Cookies</p>
-    </div>	
-	
-</body>
-</html>
+		<div class="clr"></div>
+{% endblock content %}

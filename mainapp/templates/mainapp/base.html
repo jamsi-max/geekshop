@@ -23,12 +23,14 @@
 <body>
 	<div class="container">
 
-		{% block menu %}
-        {% endblock menu %}
+    {% block menu %}
+    {% endblock menu %}
 
-        {% block content %}
-        {% endblock content %}
-        
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
 	</div>
 
     {% block footer %}
@@ -42,10 +44,19 @@
                 </div>
                 <div class="text-footer clearfix">
                     <h3>Оставайтесь на связи</h3>
+                    <p>Подписаться на новости и рассылки</p>
+                    <form>
+                        <input type="email" name="email" placeholder="ваш email">
+                        <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
+                    </form>
                 </div>
             </div>                        
-        </div>
+            <p class="small">&copy; GeekBrains {% now "Y" %}</p>
+            {% include 'mainapp/includes/inc_social.html' %}
+            <p class="small">Положения &amp; Условия / Конфиденциальность &amp; Cookies</p>
+    </div>
     {% endblock footer %}
+
 </body>
 
 </html>
