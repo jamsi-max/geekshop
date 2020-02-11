@@ -1,4 +1,4 @@
-<a href="index.html" class="logo"></a>
+<a href="{% url 'main' %}" class="logo"></a>
 <ul class="menu">
     <li>
         <a href="{% url 'main' %}" class="{% if request.resolver_match.url_name == 'main' %}active{% endif %}">     
@@ -6,7 +6,7 @@
         </a>
     </li>
     <li>
-        <a href="{% url 'products' %}">
+        <a href="{% url 'products' %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">
             продукты
         </a>
     </li>
