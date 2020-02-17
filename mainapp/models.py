@@ -22,8 +22,12 @@ class Product(models.Model):
 
 class Contacts(models.Model):
     city = models.CharField(verbose_name="город", max_length=64)
-    phone = models.PositiveIntegerField(verbose_name="телефон", unique=True)
-    email = models.CharField(verbose_name="электронная почта", max_length=128, unique=True)
+    phone = models.CharField(verbose_name="телефон", max_length=64, unique=True)
+    email = models.EmailField(verbose_name="электронная почта", max_length=128, unique=True)
     address = models.TextField(verbose_name="адрес")
+
+    def __str__(self):
+        return f"{self.city}"
+
 
 

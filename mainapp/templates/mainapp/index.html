@@ -1,7 +1,6 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
-
 {% block menu %}
 <div class="slider">
 	<div class="header clearfix">
@@ -29,16 +28,18 @@
 	</div>
 	<div class="tab-content">
 
-		{% for product in products.products %}
+		{% for product in products %}
+		{% if forloop.counter <= 4 %}
 		<div class="block">
-			<a href="{{ product.image }}"><img src="{{ media_url }}{{ product.image }}" alt="{{ product.alt }}">
+			<a href="#"><img class="tab-content-block-img" src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}">
 				<div class="text">
-					<img src="{% static 'img/icon-hover.png' %}" alt="{{ product.alt }}">
+					<img src="{% static 'img/icon-hover.png' %}" alt="{{ product.short_desc }}">
 					<h4>{{ product.name }}</h4>
-					<p>{{ product.description }}</p>
+					<p>{{ product.short_desc }}</p>
 				</div>
 			</a>
 		</div>
+		{% endif %} 
 		{% endfor %}
 	</div>
 </div>
