@@ -35,7 +35,7 @@
 						<p>Отличное качество материалов
 						позволит вам это.</p> 
 						<p>Различные цвета</p>
-						<p>высочайший уровень
+						<p>Высочайший уровень
 						эргономики и прочность.</p>
 					</div>
 				</div>
@@ -47,16 +47,22 @@
 					<a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
 				</div>
 				<div class="related-products clearfix">
-				{% for same_product in data.same_products %}
-					<div class="block">
-						<a href="#"><img src="{% static 'img/' %}{{ same_product.image_src }}" alt="{{ same_product.alt }}">
-							<div class="text">
-								<img src="{% static 'img/icon-hover.png' %}" alt="img">
-								<h4>{{ same_product.name }}</h4>
-								<p>{{ same_product.desc }}</p>
-							</div>
-						</a>
-					</div>
+				{% for product in same_products %}
+					
+						<div class="block">
+							<a href="#"><img class="related-products-block-img" src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}">
+								<div class="text">
+									<img src="{% static 'img/icon-hover.png' %}" alt="img">
+									{% comment %} <h3>Категория:{{ product.category.name }}</h3> {% endcomment %}
+									{% comment %} <h4>Название:{{ product.name }}</h4> {% endcomment %}
+									<h4>{{ product.name }}</h4>
+									<p>Описание:{{ product.short_desc }}</p>
+									<p>Цена:{{ product.price }}</p>
+									{% comment %} <p>На складе:{{ product.quantity }}</p> {% endcomment %}
+								</div>
+							</a>
+						</div>
+					
 				{% endfor %}
 
 				</div>
