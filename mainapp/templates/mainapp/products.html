@@ -48,7 +48,7 @@
 				</div>
 				<div class="related-products clearfix">
 				{% for product in same_products %}
-					{% if request.resolver_match.kwargs.pk == product.category_id or request.resolver_match.url_name == 'index' or request.resolver_match.kwargs.pk == 5 %}
+					
 						<div class="block">
 							<a href="#"><img class="related-products-block-img" src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}">
 								<div class="text">
@@ -62,7 +62,7 @@
 								</div>
 							</a>
 						</div>
-					{% endif %}
+					
 				{% endfor %}
 
 				</div>

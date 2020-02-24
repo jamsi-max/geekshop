@@ -29,7 +29,7 @@
 	<div class="tab-content">
 
 		{% for product in products %}
-		{% if forloop.counter <= 4 %}
+		
 		<div class="block">
 			<a href="#"><img class="tab-content-block-img" src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}">
 				<div class="text">
@@ -39,7 +39,7 @@
 				</div>
 			</a>
 		</div>
-		{% endif %} 
+		
 		{% endfor %}
 	</div>
 </div>
