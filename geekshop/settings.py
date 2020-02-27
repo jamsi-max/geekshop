@@ -132,3 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #Creat Auth
 AUTH_USER_MODEL = 'authnapp.ShopUser'
+
+LOGIN_URL = '/auth/login/'
