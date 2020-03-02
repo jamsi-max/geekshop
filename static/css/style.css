@@ -1085,7 +1085,7 @@ td:first-child {
     background: #fff;
     border: 1px solid #eaeaea;
     border-radius: 25px;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 28em;
     min-width: 500px;
     margin: 100px auto;
@@ -1601,4 +1601,23 @@ td:first-child {
 
 .menu-admin-ul {
 	margin-top: 0;
+}
+
+.form-control{
+	height: auto;
+}
+
+label+input[type=checkbox]{
+	display: inline-block;
+	width: auto;
+	margin-left: 20px;
+}
+
+
+.update-user-avatar{
+	display: block;
+    position: absolute;
+    left: 600px;
+    top: 750px;
+    border-radius: 45px;
 }

@@ -40,7 +40,7 @@ def user_create(request):
     else:
         user_form = ShopUserRegisterForm()
     
-    content = {'title': title, 'update_form': user_form}
+    content = {'title': title, 'update_form': user_form, 'media_url': settings.MEDIA_URL}
     
     return render(request, 'adminapp/user_update.html', content)
 
@@ -57,7 +57,7 @@ def user_update(request, pk):
     else:
         edit_form = ShopUserAdminEditForm(instance=edit_user)
     
-    content = {'title': title, 'update_form': edit_form}
+    content = {'title': title, 'update_form': edit_form, 'media_url': settings.MEDIA_URL, 'edit_user': edit_user}
     
     return render(request, 'adminapp/user_update.html', content)
 
