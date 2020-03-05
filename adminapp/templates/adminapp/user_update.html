@@ -1,0 +1,18 @@
+{% extends 'authnapp/base.html' %}
+{% load static my_tags %}
+
+{% block content %}
+  
+  <img class="update-user-avatar" src="{{ edit_user.avatar|media_folder_products }}" alt="{{ edit_user.username }}">
+  
+  <form class="form-horizontal" method="post" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    {{ update_form.as_p }}
+    <input class="form-control" type="submit" value="сохранить">
+  </form>
+  <button class="btn btn-round form-control last">
+    <a href="{% url 'admin:users' %}">
+      к списку пользователей
+    </a>
+  </button>
+{% endblock %}
