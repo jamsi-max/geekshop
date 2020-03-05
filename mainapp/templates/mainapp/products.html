@@ -45,12 +45,11 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="related">
-				<div class="title clearfix">
+				<div class="title-products">
 					<h2>Похожие продукты</h2>
 					<a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
 				</div>
+			<div class="related related-products">
 				<div class="related-products clearfix">
 				{% for product in same_products %}
 					
@@ -58,12 +57,12 @@
 							<a href="#"><img class="related-products-block-img" src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}">
 								<div class="text">
 									<img src="{% static 'img/icon-hover.png' %}" alt="img">
-									<h3>Категория:{{ product.category.name }}</h3>
-									<h4>Название:{{ product.name }}</h4>
+									{% comment %} <h3>Категория:{{ product.category.name }}</h3> {% endcomment %}
+									{% comment %} <h4>Название:{{ product.name }}</h4> {% endcomment %}
 									<h4>{{ product.name }}</h4>
 									<p>Описание:{{ product.short_desc }}</p>
 									<p>Цена:{{ product.price }}</p>
-									<p>На складе:{{ product.quantity }}</p>
+									{% comment %} <p>На складе:{{ product.quantity }}</p> {% endcomment %}
 								</div>
 							</a>
 						</div>
